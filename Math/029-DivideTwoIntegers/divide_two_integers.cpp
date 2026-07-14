@@ -11,8 +11,12 @@ public:
     int divide(int dividend, int divisor) {
         if (dividend == INT_MIN && divisor == -1) return INT_MAX;
 
-        long long dvd = abs((long long)dividend);
-        long long dvs = abs((long long)divisor);
+        long long dividendL = dividend;
+        long long divisorL = divisor;
+
+        long long dvd = (dividendL < 0) ? -dividendL : dividendL;
+        long long dvs = (divisorL < 0) ? -divisorL : divisorL;
+
         long long result = 0;
 
         while (dvd >= dvs) {
@@ -29,7 +33,7 @@ public:
         }
 
         bool negative = (dividend < 0) != (divisor < 0);
-        return negative ? -(int)result : (int)result;
+        return negative ? (int)(-result) : (int)result;
     }
 };
 
@@ -38,6 +42,7 @@ int main() {
 
     cout << sol.divide(10, 3) << endl;  // 3
     cout << sol.divide(7, -3) << endl;  // -2
+    cout << sol.divide(INT_MIN, -1) << endl; // INT_MAX (2147483647)
 
     return 0;
 }

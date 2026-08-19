@@ -14,7 +14,7 @@ struct ListNode {
 
 class Solution {
 public:
-    ListNode* reverseEvenGroups(ListNode* head) {
+    ListNode* reverseEvenLengthGroups(ListNode* head) {
         ListNode* prevGroupEnd = head;
         int groupNumber = 1;
         ListNode* curr = head->next;
@@ -76,13 +76,13 @@ int main() {
     Solution sol;
 
     ListNode* l1 = buildList({5, 2, 6, 3, 9, 1, 7, 3, 8, 4});
-    printList(sol.reverseEvenGroups(l1)); // 5 6 2 3 9 1 4 8 3 7
+    printList(sol.reverseEvenLengthGroups(l1)); // 5 6 2 3 9 1 4 8 3 7
 
     ListNode* l2 = buildList({1, 1, 0, 6});
-    printList(sol.reverseEvenGroups(l2)); // 1 0 1 6
+    printList(sol.reverseEvenLengthGroups(l2)); // 1 0 1 6
 
     ListNode* l3 = buildList({1, 1, 0, 6, 5});
-    printList(sol.reverseEvenGroups(l3)); // 1 0 1 5 6
+    printList(sol.reverseEvenLengthGroups(l3)); // 1 0 1 5 6
 
     return 0;
 }

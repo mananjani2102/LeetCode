@@ -73,7 +73,7 @@ Final: 5→6→2→3→9→1→4→8→3→7 ✓
 ```cpp
 class Solution {
 public:
-    ListNode* reverseEvenGroups(ListNode* head) {
+    ListNode* reverseEvenLengthGroups(ListNode* head) {
         ListNode* prevGroupEnd = head;
         int groupNumber = 1;
         ListNode* curr = head->next;
